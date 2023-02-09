@@ -9,6 +9,14 @@ export class TextsService {
     appTitle: {
       en: 'Scales Harmonization Dictionary',
       fr: 'Dictionnaire d\'harmonisation de gammes'
+    },
+    findChords: {
+      en: 'Find the chords of a scale',
+      fr: 'Trouver les accords d\'une gamme'
+    },
+    settings: {
+      en: 'Settings',
+      fr: 'Options'
     }
   }
 

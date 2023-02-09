@@ -1,1 +1,20 @@
-<p>home works!</p>
+<app-header 
+    navbarText="{{ textsService.getText('appTitle') }}"
+    [hasBackArrow]="false"
+>
+</app-header>
+<main class="container mt-3 mb-3">
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary col-6 mb-3">
+            <i class="fa-solid fa-book"></i>
+            {{ textsService.getText('findChords') }}
+        </button>
+    </div>
+
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary col-6 mb-3" routerLink="settings">
+            <i class="fa-solid fa-gear"></i>
+            {{ textsService.getText('settings') }}
+        </button>
+    </div>
+</main>

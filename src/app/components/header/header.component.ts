@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TextsService } from 'src/app/services/texts.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { TextsService } from 'src/app/services/texts.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() navbarText: string = '';
+  @Input() hasBackArrow: boolean = false;
 
   constructor(public textsService: TextsService) { }
 
