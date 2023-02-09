@@ -8,7 +8,7 @@ import { TextsService } from 'src/app/services/texts.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  public selChordType: any = {};
+  public selChordTypeId: string = '1';
 
   constructor(
     public textsService: TextsService,
@@ -16,15 +16,13 @@ export class SettingsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.selChordType = this.chordTypesService.getAll()[0];
-    if(localStorage.getItem('selChordType') !== null) {
-      this.selChordType = this.chordTypesService.getAll().find((chordType: any) => chordType.id === JSON.parse(localStorage.getItem('selChordType')!).id);
-    }
+    localStorage.getItem('selChordTypeId') !== null 
+      ? this.selChordTypeId = localStorage.getItem('selChordTypeId')! 
+      : this.selChordTypeId = '1';
   }
 
   public persistChordType() {
-    localStorage.setItem('selChordType', JSON.stringify(this.selChordType));
-    console.log(localStorage.getItem('selChordType'));
+     localStorage.setItem('selChordTypeId', this.selChordTypeId);
   }
 
 }

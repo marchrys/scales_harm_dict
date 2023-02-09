@@ -13,15 +13,15 @@
                 class="form-select" 
                 id="chord-type-select" 
                 name="chordTypeSelect"
-                [(ngModel)]="selChordType"
+                [(ngModel)]="selChordTypeId"
                 (change)="persistChordType()"
             >
-              <option *ngFor="let chordType of chordTypesService.getAll()" [ngValue]="chordType">
+              <option *ngFor="let chordType of chordTypesService.getAll()" [value]="chordType.id">
                 {{ chordType.name[textsService.getLang()] }}
               </option>
             </select>
         </div>
     </form>
 
-    {{ selChordType | json }}
+    {{ selChordTypeId | json }}
 </main>

@@ -7,13 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { FormsModule } from '@angular/forms';
+import { DictComponent } from './pages/dict/dict.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    DictComponent
   ],
   imports: [
     BrowserModule,
