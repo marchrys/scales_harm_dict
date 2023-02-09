@@ -3,3 +3,25 @@
     [hasBackArrow]="true"
 >
 </app-header>
+<main class="container mt-3 mb-3">
+    <form>
+        <div class="form-group">
+            <label for="exampleSelect1" class="form-label mt-4">
+                {{ textsService.getText('harmTypes') }}
+            </label>
+            <select 
+                class="form-select" 
+                id="chord-type-select" 
+                name="chordTypeSelect"
+                [(ngModel)]="selChordType"
+                (change)="persistChordType()"
+            >
+              <option *ngFor="let chordType of chordTypesService.getAll()" [ngValue]="chordType">
+                {{ chordType.name[textsService.getLang()] }}
+              </option>
+            </select>
+        </div>
+    </form>
+
+    {{ selChordType | json }}
+</main>
