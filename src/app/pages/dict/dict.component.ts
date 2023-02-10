@@ -8,6 +8,8 @@ import { TextsService } from 'src/app/services/texts.service';
   styleUrls: ['./dict.component.scss']
 })
 export class DictComponent implements OnInit {
+  public selTonicId: string = '';
+  public selScaleId: string = '';
 
   constructor(
     public textsService: TextsService,
@@ -15,7 +17,21 @@ export class DictComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.notesService.getTonics());
+    this.selTonicId = this.loadFromLocalStorage('selTonicId');
+  }
+
+  public persistTonic() {
+    localStorage.setItem('selTonicId', this.selTonicId)
+  }
+
+  public loadFromLocalStorage(key: string) {
+    let property: string;
+
+    localStorage.getItem(key) !== null 
+        ? property = localStorage.getItem(key)!
+        : property = '1';
+        
+    return property;
   }
 
 }

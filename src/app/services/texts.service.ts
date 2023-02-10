@@ -14,6 +14,10 @@ export class TextsService {
       en: 'Find the chords of a scale',
       fr: 'Trouver les accords d\'une gamme'
     },
+    root: {
+      en: 'Root',
+      fr: 'Tonique'
+    },
     settings: {
       en: 'Settings',
       fr: 'Options'
