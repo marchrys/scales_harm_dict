@@ -14,17 +14,21 @@ export class TextsService {
       en: 'Find the chords of a scale',
       fr: 'Trouver les accords d\'une gamme'
     },
+    harmTypes: {
+      en: 'Harmonization chords',
+      fr: 'Accords pour l\'harmonisation'
+    },
     root: {
       en: 'Root',
       fr: 'Tonique'
     },
+    scale: {
+      en: 'Scale',
+      fr: 'Gamme'
+    },
     settings: {
       en: 'Settings',
       fr: 'Options'
-    },
-    harmTypes: {
-      en: 'Harmonization chords',
-      fr: 'Accords pour l\'harmonisation'
     }
   }
 

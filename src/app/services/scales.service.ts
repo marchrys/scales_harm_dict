@@ -30,4 +30,8 @@ export class ScalesService {
   ];
 
   constructor() { }
+
+  public getAll() {
+    return this.scales;
+  }
 }

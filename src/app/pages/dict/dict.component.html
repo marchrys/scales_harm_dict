@@ -5,17 +5,32 @@
 </app-header>
 <main class="container mt-3 mb-3">
     <div class="row">
-        <div class="form-group">
+        <div class="form-group col-12 col-md-6">
             <label for="tonic-select" class="form-label mt-4">{{ textsService.getText('root') }}</label>
             <select 
                 class="form-select" 
                 name="tonicSelect" 
                 id="tonic-select"
                 [(ngModel)]="selTonicId"
-                (change)="persistTonic()"
+                (change)="persistInLocalStorage('selTonicId', selTonicId)"
             >
               <option *ngFor="let tonic of notesService.getTonics()" value="{{ tonic.id }}">
                 {{ tonic.name }}
+              </option>
+            </select>
+        </div>
+
+        <div class="form-group col-12 col-md-6">
+            <label for="scale-select" class="form-label mt-4">{{ textsService.getText('scale') }}</label>
+            <select 
+                class="form-select" 
+                name="scaleSelect" 
+                id="scale-select"
+                [(ngModel)]="selScaleId"
+                (change)="persistInLocalStorage('selScaleId', selScaleId)"
+            >
+              <option *ngFor="let scale of scalesService.getAll()" value="{{ scale.id }}">
+                {{ scale.name[textsService.getLang()] }}
               </option>
             </select>
         </div>
