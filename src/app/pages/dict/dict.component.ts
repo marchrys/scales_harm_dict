@@ -37,4 +37,20 @@ export class DictComponent implements OnInit {
     return property;
   }
 
+  public getSelScale() {
+    return this.scalesService.getAll().find((scale: any) => scale.id == this.selScaleId);
+  }
+
+  public getScaleNotes() {
+    let scaleNotes: any = [];
+
+    scaleNotes.push(this.notesService.getAll().find((note: any) => note.id == this.selTonicId));
+
+    for(let i=0; i<this.getSelScale().intervals.length; i++) {
+      scaleNotes.push(this.notesService.getAll().find((note: any) => note.id == parseInt(this.selTonicId) + this.getSelScale().intervals[i]));
+    }
+
+    return scaleNotes;
+  }
+
 }

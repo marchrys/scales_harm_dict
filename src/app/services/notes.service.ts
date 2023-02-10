@@ -123,6 +123,10 @@ export class NotesService {
     }
   }
 
+  public getAll() {
+    return this.notes;
+  }
+
   public getTonics() {
     return this.notes.filter((note: any) => note.isTonic);
   }

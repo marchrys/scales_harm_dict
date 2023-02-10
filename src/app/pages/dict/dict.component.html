@@ -35,4 +35,11 @@
             </select>
         </div>
     </div>
+    <div class="row mt-3">
+        <div *ngFor="let degree of getSelScale().degrees" class="col text-center">
+            {{ degree }}
+        </div>
+    </div>
+
+    {{ this.getScaleNotes() | json }}
 </main>
