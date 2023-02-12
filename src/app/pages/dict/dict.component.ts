@@ -53,4 +53,12 @@ export class DictComponent implements OnInit {
     return scaleNotes;
   }
 
+  public hasDoubleAcc() {
+    let hasDoubleAcc: boolean = false;
+
+    if(this.getScaleNotes().includes(undefined)) { hasDoubleAcc = true };
+ 
+    return hasDoubleAcc;
+  }
+
 }
