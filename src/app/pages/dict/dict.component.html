@@ -41,5 +41,16 @@
         </div>
     </div>
 
-    {{ hasDoubleAcc() }}
+    <div class="row text-center mt-3 text-warning" *ngIf="hasDoubleAcc(); else scale_chords">
+        <span class="fs-5"><i class="fa-solid fa-circle-exclamation"></i></span> {{ textsService.getText('doubleAccMsg') }}
+    </div>
+    <ng-template #scale_chords>
+        <div class="row mt-3"> 
+            <div *ngFor="let note of getScaleNotes(); let i = index" class="col text-center">
+                {{ note.name }}{{ getSelScalesChords()[i] }}
+            </div>
+        </div>
+    </ng-template>
+
+    {{ getSelScalesChords() }}
 </main>

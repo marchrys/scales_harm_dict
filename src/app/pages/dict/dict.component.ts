@@ -11,6 +11,7 @@ import { TextsService } from 'src/app/services/texts.service';
 export class DictComponent implements OnInit {
   public selTonicId: string = '';
   public selScaleId: string = '';
+  public selChordTypeId: string = '';
 
   constructor(
     public textsService: TextsService,
@@ -21,6 +22,7 @@ export class DictComponent implements OnInit {
   ngOnInit(): void {
     this.selTonicId = this.loadFromLocalStorage('selTonicId');
     this.selScaleId = this.loadFromLocalStorage('selScaleId');
+    this.selChordTypeId = this.loadFromLocalStorage('selChordTypeId');
   }
 
   public persistInLocalStorage(key: string, property: any) {
@@ -59,6 +61,12 @@ export class DictComponent implements OnInit {
     if(this.getScaleNotes().includes(undefined)) { hasDoubleAcc = true };
  
     return hasDoubleAcc;
+  }
+
+  public getSelScalesChords() {
+    let chords = [];
+    this.selChordTypeId === '1' ? chords = this.getSelScale().triads : chords = this.getSelScale().sevenths;
+    return chords;
   }
 
 }

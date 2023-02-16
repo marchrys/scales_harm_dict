@@ -10,6 +10,10 @@ export class TextsService {
       en: 'Scales Harmonization Dictionary',
       fr: 'Dictionnaire d\'harmonisation de gammes'
     },
+    doubleAccMsg: {
+      en: 'This scale contains double accidentals, but our app does not use them, for the sake of simplicity. In general, you can obtain the same result by replacing the tonic by its enharmonic note (for example replacing a C# by a Db).',
+      fr: 'Cette gamme contient des doubles altérations, mais notre appli ne les utilise pas, dans un souci de simplicité. En général, vous pouvez obtenir le même résultat en replaçant la tonique par sa note enharmonique (pr exemple remplacer un C# par un Db).'
+    },
     findChords: {
       en: 'Find the chords of a scale',
       fr: 'Trouver les accords d\'une gamme'
